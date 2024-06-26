@@ -1,19 +1,23 @@
 cmake_minimum_required(VERSION 3.22)
 set(CMAKE_CXX_STANDARD 17)
 
+if ($ENV{GITHUB_RUN_NUMBER})
+    set(PROJECT_VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
+else ()
+    set(PROJECT_VERSION 0.0.1)
+endif ()
 
-#project(editor VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
-project(editor VERSION 0.0.1)
+project(editor VERSION ${PROJECT_VERSION})
 
-include_directories(src)
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-file(GLOB ALL_SRC
-        "src/*.cpp"
-        "include/*.hpp"
-        main.cpp
+add_executable(editor
+                src/controller.cpp
+                src/main.cpp
+                src/model.cpp
+                src/primitives.cpp
+                src/view.cpp
 )
-
-add_executable(editor  ${ALL_SRC})
 
 if (MSVC)
     target_compile_options(editor PRIVATE

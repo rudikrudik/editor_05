@@ -1,9 +1,11 @@
+#include <memory>
+#include <iostream>
+
 #include "model.hpp"
 #include "view.hpp"
 #include "controller.hpp"
 #include "primitives.hpp"
-#include <memory>
-#include <iostream>
+
 
 int main() {
     std::cout << "New document" << std::endl;
