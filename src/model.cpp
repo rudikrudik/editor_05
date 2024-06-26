@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iostream>
+
 #include "model.hpp"
 
 GraphicDocument::GraphicDocument(const std::string& path) {
@@ -7,6 +8,7 @@ GraphicDocument::GraphicDocument(const std::string& path) {
 }
 
 void GraphicDocument::load_document(const std::string& path) {
+    std::cout << path << std::endl;
     elements.clear();
 }
 
@@ -24,7 +26,9 @@ void GraphicDocument::remove_primitive_from_document(std::shared_ptr<Primitive>&
 }
 
 void GraphicDocument::save_document(const std::string& path) {
-    for (const auto& element: elements) {}
+    for (const auto& element: elements) {
+        std::cout << element << path << std::endl;
+    }
 }
 
 std::vector<std::string> GraphicDocument::get_elements_presentations() const {
