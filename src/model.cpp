@@ -33,6 +33,8 @@ void GraphicDocument::save_document(const std::string& path) {
 
 std::vector<std::string> GraphicDocument::get_elements_presentations() const {
     std::vector<std::string> presentations;
+    presentations.reserve(elements.size());
+
     for(const auto& element: elements)
         presentations.emplace_back(element->get_presentation());
     return presentations;

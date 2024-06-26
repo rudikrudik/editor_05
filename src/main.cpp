@@ -18,19 +18,19 @@ int main() {
 
     std::cout << "Add line" << std::endl;
     auto line = std::shared_ptr<Primitive>(
-            new Line{Color{125, 255, 125}, Coordinate{0, 0}, Coordinate{10, 10}});
+            new Line{Color{125, 255, 125}, Point{0, 0}, Point{10, 10}});
     controller.add_primitive(line);
 
 
     std::cout << "Add circle" << std::endl;
     auto circle = std::shared_ptr<Primitive>(
-            new Circle{Color{0, 125, 0}, Coordinate{20, 20}, 20});
+            new Circle{Color{0, 125, 0}, Point{20, 20}, 20});
     controller.add_primitive(circle);
 
 
     std::cout << "Add rectangle" << std::endl;
     auto rectangle = std::shared_ptr<Primitive>(
-            new Rectangle{Color{0, 125, 0}, Coordinate{20, 20}, Coordinate{100, 100}});
+            new Rectangle{Color{0, 125, 0}, Point{20, 20}, Point{100, 100}});
     controller.add_primitive(rectangle);
 
     std::cout << "Remove line" << std::endl;

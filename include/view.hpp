@@ -8,5 +8,5 @@ public:
     void draw();
 private:
     const GraphicDocument& model;
-    void render();
+    //void render();
 };
