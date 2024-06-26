@@ -25,7 +25,7 @@ if (MSVC)
     )
 else ()
     target_compile_options(editor PRIVATE
-            -Wall -Wextra -pedantic -Werror
+            -Wall -Wextra -Werror
     )
 endif()
 
